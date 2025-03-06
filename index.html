@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIB - GTA RP</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: transparent;
+            -webkit-text-stroke: 1px white;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .navbar {
+            background-color: #333;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #414141;
+        }
+        .content {
+            display: none;
+            padding: 100px 20px;
+        }
+        .content.active {
+            display: block;
+        }
+        .icon {
+            font-size: 50px;
+            margin-top: 20px;
+            color: #fff;
+            transition: transform 0.3s ease;
+        }
+        .icon:hover {
+            transform: scale(1.1);
+            color: #ffcc00;
+        }
+        .vehicle-container, .clothing-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        .vehicle, .clothing {
+            text-align: center;
+        }
+        .vehicle img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            background-color: #1a1a1a;
+            padding: 5px;
+            border-radius: 10px;
+        }
+        .clothing img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            background-color: #1a1a1a;
+            padding: 5px;
+            border-radius: 10px;
+        }
+    </style>
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('.content').forEach(section => {
+                section.classList.remove('active');
+            });
+            const activeSection = document.getElementById(id);
+            if (activeSection) {
+                activeSection.classList.add('active');
+            }
+        }
+    </script>
+</head>
+<body onload="showSection('home')">
+    <div class="navbar">
+        <a href="#" onclick="showSection('home')">Startseite</a>
+        <a href="#" onclick="showSection('laws')">Gesetze</a>
+        <a href="#" onclick="showSection('documents')">Dokumente</a>
+        <a href="#" onclick="showSection('clothing')">Kleidung</a>
+        <a href="#" onclick="showSection('vehicles')">Fahrzeugordnung</a>
+    </div>
+    
+    <div id="home" class="content active">
+        <h1>Federal Investigation Bureau</h1>
+        <p>Willkommen auf der offiziellen Informationen Seite des FIB.</p>
+        <img src="fib_logo.png" alt="FIB Logo" style="width: 200px; margin-top: 20px;">
+    </div>
+
+    <div id="laws" class="content">
+        <h1>Gesetze</h1>
+        <iframe src="https://docs.google.com/spreadsheets/d/1tQYUpeZWoNF8ggSSnBiICNdR2ghTiAxmc74VHoTrtak/edit?gid=421169235#gid=421169235" width="100%" height="500px" style="border: none;"></iframe>
+        <br>
+        <a class="laws-button" href="https://drive.google.com/drive/folders/198-kk1nnlYZN0ESFbrxU62efRxu0Jcps" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: #444444; color: #000; font-weight: bold; text-decoration: none; border-radius: 5px; margin-top: 10px;">Weitere Gesetze</a>
+    </div>
+
+    <div id="documents" class="content">
+        <h1>Dokumente</h1>
+        <iframe src="https://docs.google.com/document/d/16jZ895W1aOA8PBF7y17iXvkwD0ax7QPN7Y1tCGsWFQM/preview?tab=t.0" width="100%" height="500px" style="border: none;"></iframe>
+    </div>
+    
+    <div id="clothing" class="content">
+        <h1>Kleidung</h1>
+        <p>Stand: 06.03.2025 - Dies ist die aktuelle Kleiderordnung</p>
+        <div class="clothing-container">
+            <div class="clothing"><h3>RANG 1</h3><img src="placeholder_clothing1.png" alt="RANG 1"><p>Helm - Freie Auswahl Seriös<br>Brille - Freie Auswahl Seriös<br>Maske - 121<br>T-Shirt - 15<br>Torso - 954<br>Weste - 167<br>Arme - 30 - 0<br>Hose - 24 - 0<br>Schuhe - Freie Auswahl Seriös</p></div>
+            <div class="clothing"><h3>RANG 2-4</h3><img src="placeholder_clothing2.png" alt="RANG 2-4"><p>Helm - Freie Auswahl Seriös<br>Brille - Freie Auswahl Seriös<br>Maske - 121<br>T-Shirt - 15<br>Torso - 954<br>Weste - 167<br>Arme - 30 - 0<br>Hose - 24 - 0<br>Schuhe - Freie Auswahl Seriös</p></div>
+            <div class="clothing"><h3>DIVISIONS LEITUNG</h3><img src="placeholder_clothing3.png" alt="Divisions Leitung"><p>Helm - Freie Auswahl Seriös<br>Brille - Freie Auswahl Seriös<br>Maske - 121<br>T-Shirt - 15<br>Torso - 954<br>Weste - 167<br>Arme - 30 - 0<br>Hose - 24 - 0<br>Schuhe - Freie Auswahl Seriös</p></div>
+        </div>
+    </div>
+    
+    <div id="vehicles" class="content">
+        <h1>Fahrzeugordnung</h1>
+        <p>Alle FIB-Fahrzeuge <b>müssen</b> in der Farbe Schwarz gehalten werden. Bunte Felgen sind nicht erlaubt, ebenso keine Trollfelgen! Nur dezentes Tuning und dezente Felgen sind gestattet.</p>
+        <div class="vehicle-container">
+            <div class="vehicle"><h3>RANG 1-2</h3><img src="placeholder1.png" alt="RANG 1-2"></div>
+            <div class="vehicle"><h3>RANG 3-4</h3><img src="placeholder2.png" alt="RANG 3-4"></div>
+            <div class="vehicle"><h3>RANG 5</h3><img src="placeholder3.png" alt="RANG 5"></div>
+            <div class="vehicle"><h3>RANG 6</h3><img src="placeholder4.png" alt="RANG 6"></div>
+            <div class="vehicle"><h3>RANG 7</h3><img src="placeholder5.png" alt="RANG 7"></div>
+            <div class="vehicle"><h3>RANG 8-9</h3><img src="placeholder6.png" alt="RANG 8-9"></div>
+            <div class="vehicle"><h3>Zusätzlich 1</h3><img src="placeholder1.png" alt="Zusätzlich 1"></div>
+            <div class="vehicle"><h3>Zusätzlich 2</h3><img src="placeholder1.png" alt="Zusätzlich 2"></div>
+        </div>
+    </div>
+</body>
+</html>
